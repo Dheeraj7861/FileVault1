@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 File Access Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .file-test {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>S3 File Access Test</h1>
+    <p>Click the buttons to test accessing files directly from S3.</p>
+
+    <div class="file-test">
+        <h2>Version 7 (with key)</h2>
+        <p>URL: https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v7-228d85f6-bebe-44d8-897b-160d1077d212.pdf</p>
+        <button onclick="openFile('https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v7-228d85f6-bebe-44d8-897b-160d1077d212.pdf')">Open File (Same Tab)</button>
+        <button onclick="openFileNewTab('https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v7-228d85f6-bebe-44d8-897b-160d1077d212.pdf')">Open File (New Tab)</button>
+    </div>
+
+    <div class="file-test">
+        <h2>Version 6 (with key)</h2>
+        <p>URL: https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v6-9876e4bb-5420-456f-b574-d436334438e7.pdf</p>
+        <button onclick="openFile('https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v6-9876e4bb-5420-456f-b574-d436334438e7.pdf')">Open File (Same Tab)</button>
+        <button onclick="openFileNewTab('https://filevault7536.s3.amazonaws.com/projects/67fe91f37cfb716a09016ea8/versions/v6-9876e4bb-5420-456f-b574-d436334438e7.pdf')">Open File (New Tab)</button>
+    </div>
+
+    <div class="file-test">
+        <h2>Version 3 (without key, old format)</h2>
+        <p>URL: https://filevault7536.s3.amazonaws.com/uploads/79b46c58-dd44-45d8-9da5-7cc0fe77112b.pdf</p>
+        <button onclick="openFile('https://filevault7536.s3.amazonaws.com/uploads/79b46c58-dd44-45d8-9da5-7cc0fe77112b.pdf')">Open File (Same Tab)</button>
+        <button onclick="openFileNewTab('https://filevault7536.s3.amazonaws.com/uploads/79b46c58-dd44-45d8-9da5-7cc0fe77112b.pdf')">Open File (New Tab)</button>
+    </div>
+
+    <div id="status" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function openFile(url) {
+            document.getElementById('status').textContent = 'Attempting to open: ' + url;
+            window.location.href = url;
+        }
+
+        function openFileNewTab(url) {
+            document.getElementById('status').textContent = 'Attempting to open in new tab: ' + url;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html> 
