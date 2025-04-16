@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
@@ -7,8 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from '@/components/ui/use-toast';
-import { EyeIcon, EyeOffIcon, InfoIcon } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { EyeIcon, EyeOffIcon } from 'lucide-react';
 
 const Login = () => {
   const { login } = useAuth();
@@ -59,17 +57,6 @@ const Login = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Alert className="mb-4 bg-blue-50 text-blue-800 border-blue-200">
-            <InfoIcon className="h-4 w-4" />
-            <AlertTitle>Demo Credentials</AlertTitle>
-            <AlertDescription>
-              <div className="mt-2 text-sm">
-                <p><strong>Admin:</strong> admin@example.com / password123</p>
-                <p><strong>User:</strong> user@example.com / password123</p>
-              </div>
-            </AlertDescription>
-          </Alert>
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
