@@ -1,4 +1,4 @@
-# Project Nexus
+# Project Nexus-share
 
 A collaborative file versioning and sharing platform that enables teams to work on projects together.
 
